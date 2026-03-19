@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>孙翌</title>
+    <meta
+      name="description"
+      content="A personal page for 孙翌, featuring background, research, interests, and QR-code contact panels."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="./wechat.jpg" as="image" />
+    <link rel="preload" href="./rednote.jpg" as="image" />
+    <link rel="preload" href="./TouXiang.png" as="image" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600;700&amp;family=Silkscreen:wght@400;700&amp;family=VT323&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --shell-top: #d8d2c7;
+        --shell-mid: #c9c2b6;
+        --shell-bottom: #b7b0a2;
+        --shell-line: #8f887d;
+        --shell-shadow: rgba(24, 24, 20, 0.22);
+        --screen: #171717;
+        --screen-raised: #2d2d29;
+        --screen-grid: rgba(255, 255, 255, 0.06);
+        --paper: #f1efe7;
+        --paper-deep: #e3dfd2;
+        --paper-dither: rgba(17, 17, 17, 0.05);
+        --ink: #111111;
+        --muted: #5f5c54;
+        --line: #7d7b73;
+        --inverse: #f5f3ec;
+        --crt-bg-top: #cfd0c7;
+        --crt-bg-mid: #e3e2d8;
+        --crt-bg-bottom: #f1efe6;
+        --crt-ink: #171512;
+        --crt-line: #1e1b17;
+        --crt-line-soft: rgba(30, 27, 23, 0.42);
+        --crt-line-faint: rgba(30, 27, 23, 0.14);
+        --crt-shadow: rgba(17, 17, 17, 0.56);
+        --crt-paper: rgba(248, 246, 239, 0.9);
+        --crt-paper-strong: rgba(250, 249, 243, 0.97);
+        --crt-paper-deep: rgba(235, 232, 222, 0.97);
+        --shadow-hard: 4px 4px 0 #111111;
+        --focus-ring: 3px solid #111111;
+        --radius-shell: 26px;
+        --space-1: 0.375rem;
+        --space-2: 0.625rem;
+        --space-3: 0.875rem;
+        --space-4: 1.125rem;
+        --space-5: 1.5rem;
+        --space-6: 2rem;
+        --font-display: "Silkscreen", monospace;
+        --font-body: "VT323", "IBM Plex Mono", "PingFang SC", "Hiragino Sans GB",
+          "Noto Sans SC", monospace;
+        --font-human: "Instrument Sans", "PingFang SC", "Hiragino Sans GB",
+          "Noto Sans SC", sans-serif;
+        --font-mono: "IBM Plex Mono", "SFMono-Regular", "Consolas", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font-human);
+        color: var(--ink);
+        background:
+          radial-gradient(circle at top, rgba(255, 255, 255, 0.5), transparent 32%),
+          linear-gradient(180deg, #f2eee6 0%, #e7e0d3 52%, #ddd4c7 100%);
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0;
+        background: none;
+      }
+
+      body::after {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.14) 0%, transparent 26%),
+          linear-gradient(180deg, transparent 0%, rgba(102, 84, 56, 0.06) 100%);
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      a:focus-visible {
+        outline: var(--focus-ring);
+        outline-offset: 4px;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+        z-index: 20;
+        padding: 0.7rem 1rem;
+        border: 2px solid var(--ink);
+        background: var(--paper);
+        font-family: var(--font-display);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        transform: translateY(-180%);
+        transition: transform 180ms ease;
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .stage {
+        position: relative;
+        padding: clamp(1.5rem, 4vw, 3.4rem) clamp(1rem, 3vw, 2rem)
+          clamp(2.8rem, 7vw, 4.8rem);
+      }
+
+      .computer-scene {
+        position: relative;
+        width: min(100%, 110rem);
+        margin: 0 auto;
+        display: grid;
+        justify-items: center;
+        gap: clamp(0.25rem, 1.2vw, 0.9rem);
+      }
+
+      .computer-scene__shadow {
+        position: absolute;
+        left: 50%;
+        bottom: clamp(8.5rem, 15vw, 10rem);
+        width: min(56%, 26rem);
+        height: clamp(2rem, 5vw, 3rem);
+        transform: translateX(-50%);
+        border-radius: 999px;
+        background: radial-gradient(
+          closest-side,
+          rgba(90, 69, 33, 0.32) 0%,
+          rgba(90, 69, 33, 0.16) 58%,
+          transparent 100%
+        );
+        filter: blur(12px);
+        pointer-events: none;
+      }
+
+      .machine {
+        position: relative;
+        width: min(100%, 54rem);
+        margin: 0 auto;
+        display: grid;
+        justify-items: center;
+        z-index: 2;
+      }
+
+      .machine__handle {
+        position: relative;
+        width: 74%;
+        height: 1.34rem;
+        margin: 0 auto -0.28rem;
+        border: 1px solid rgba(191, 177, 151, 0.95);
+        border-bottom-color: rgba(160, 137, 98, 0.72);
+        border-radius: 0.5rem 0.5rem 0 0;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(255, 255, 255, 0) 22%),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.2) 0%,
+            transparent 14%,
+            transparent 86%,
+            rgba(139, 113, 76, 0.12) 100%
+          ),
+          linear-gradient(180deg, rgba(244, 235, 220, 0.99) 0%, rgba(223, 212, 191, 0.98) 56%, rgba(210, 197, 171, 0.98) 100%);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.8),
+          inset 0 -8px 10px rgba(146, 121, 82, 0.18),
+          inset 18px 0 18px rgba(255, 255, 255, 0.05),
+          inset -18px 0 18px rgba(132, 107, 69, 0.08),
+          0 1px 0 rgba(255, 255, 255, 0.34),
+          0 7px 12px rgba(0, 0, 0, 0.04);
+        overflow: hidden;
+        z-index: 3;
+      }
+
+      .machine__handle::before,
+      .machine__handle::after {
+        content: "";
+        position: absolute;
+        top: 0.1rem;
+        bottom: 0.14rem;
+        width: 1px;
+        background: rgba(165, 151, 127, 0.92);
+        box-shadow:
+          1px 0 0 rgba(255, 255, 255, 0.45),
+          0 0 0 1px rgba(255, 255, 255, 0.06);
+      }
+
+      .machine__handle::before {
+        left: 24.5%;
+      }
+
+      .machine__handle::after {
+        right: 24.5%;
+      }
+
+      .machine__shell {
+        --shell-side-pad: clamp(0.52rem, 1.6vw, 0.68rem);
+        --shell-bottom-pad: clamp(0.8rem, 1.7vw, 0.92rem);
+        position: relative;
+        width: 100%;
+        padding: clamp(1.02rem, 1.95vw, 1.28rem) var(--shell-side-pad) var(--shell-bottom-pad);
+        border: 1px solid rgba(184, 170, 148, 0.96);
+        border-radius: 1.45rem;
+        background:
+          radial-gradient(90% 130% at -8% 52%, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0) 56%),
+          radial-gradient(90% 130% at 108% 52%, rgba(153, 128, 88, 0.18) 0%, rgba(153, 128, 88, 0) 56%),
+          radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.56), transparent 18%),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.18) 0%,
+            transparent 12%,
+            transparent 88%,
+            rgba(122, 101, 68, 0.1) 100%
+          ),
+          linear-gradient(180deg, #f6eedf 0%, #eee3cf 34%, #dbcaaa 76%, #cfbd9d 100%);
+        box-shadow:
+          inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+          inset 34px 0 38px rgba(255, 255, 255, 0.05),
+          inset -34px 0 40px rgba(132, 107, 69, 0.08),
+          inset 0 -34px 38px rgba(169, 144, 103, 0.14),
+          inset -2px -2px 0 rgba(147, 130, 101, 0.18),
+          0 18px 30px rgba(100, 83, 54, 0.24);
+        display: grid;
+        justify-items: center;
+        gap: 0;
+        z-index: 2;
+      }
+
+      .machine__shell::before {
+        content: "";
+        position: absolute;
+        inset: 0.26rem;
+        border-radius: 1.24rem;
+        border: 1px solid rgba(255, 255, 255, 0.44);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.36),
+          inset 0 -1px 0 rgba(143, 119, 83, 0.12);
+        pointer-events: none;
+      }
+
+      .machine__shell::after {
+        content: "";
+        position: absolute;
+        left: 0.74rem;
+        right: 0.74rem;
+        bottom: -0.92rem;
+        height: 1.46rem;
+        border-radius: 0 0 1rem 1rem;
+        background: linear-gradient(180deg, rgba(181, 163, 134, 0.45), rgba(181, 163, 134, 0));
+        filter: blur(1.6px);
+        z-index: -1;
+      }
+
+      .screen-well {
+        position: relative;
+        width: min(100%, 50.5rem);
+        margin-top: 0.12rem;
+        padding: 0.66rem 0.72rem 0.84rem;
+        border-radius: 1.12rem;
+        background:
+          radial-gradient(120% 155% at -10% 50%, rgba(255, 255, 255, 0.28) 0%, rgba(255, 255, 255, 0) 48%),
+          radial-gradient(120% 155% at 110% 50%, rgba(155, 125, 81, 0.18) 0%, rgba(155, 125, 81, 0) 52%),
+          linear-gradient(145deg, #f9f2e4 0%, #eadcc1 35%, #cfbd9f 100%);
+        box-shadow:
+          inset 18px 18px 24px rgba(122, 101, 68, 0.22),
+          inset -10px -10px 16px rgba(255, 255, 255, 0.5),
+          inset 24px 0 24px rgba(255, 255, 255, 0.05),
+          inset -24px 0 24px rgba(129, 102, 64, 0.06),
+          0 2px 0 rgba(255, 255, 255, 0.22);
+        overflow: hidden;
+        isolation: isolate;
+        z-index: 2;
+      }
+
+      .screen-well::before {
+        content: "";
+        position: absolute;
+        inset: 0.24rem 0.28rem 0.38rem;
+        border-radius: 0.9rem;
+        box-shadow:
+          inset 16px 16px 18px rgba(115, 90, 57, 0.12),
+          inset -8px -8px 12px rgba(255, 255, 255, 0.34),
+          inset 0 1px 0 rgba(255, 255, 255, 0.54),
+          inset 0 -1px 0 rgba(130, 104, 68, 0.16);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .screen-well::after {
+        content: "";
+        position: absolute;
+        left: 0.74rem;
+        right: 0.74rem;
+        bottom: 0.26rem;
+        height: 0.58rem;
+        border-radius: 0 0 0.66rem 0.66rem;
+        background: linear-gradient(180deg, rgba(128, 102, 64, 0.2), rgba(128, 102, 64, 0));
+        filter: blur(0.4px);
+        opacity: 0.95;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .screen-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1.42 / 1;
+        padding: 0.5rem;
+        margin: 0 auto;
+        border: 1px solid #090806;
+        border-radius: 0.96rem;
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 12%),
+          linear-gradient(180deg, #47453f 0%, #262421 16%, #121211 52%, #090909 100%);
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+          inset 0 0 0 6px rgba(0, 0, 0, 0.28),
+          inset 0 -14px 18px rgba(0, 0, 0, 0.18),
+          0 5px 0 rgba(0, 0, 0, 0.18),
+          0 12px 20px rgba(0, 0, 0, 0.14);
+        display: flex;
+        z-index: 1;
+      }
+
+      .screen-frame::before {
+        content: "";
+        position: absolute;
+        inset: 0.16rem;
+        border-radius: 0.8rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0));
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.05),
+          inset 0 -7px 14px rgba(0, 0, 0, 0.46),
+          inset 7px 0 12px rgba(255, 255, 255, 0.02),
+          inset -8px 0 14px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+      }
+
+      .screen-frame::after {
+        content: "";
+        position: absolute;
+        left: 0.62rem;
+        right: 0.62rem;
+        bottom: -0.38rem;
+        height: 0.52rem;
+        border-radius: 0 0 0.56rem 0.56rem;
+        background: linear-gradient(180deg, rgba(16, 16, 16, 0.28), rgba(16, 16, 16, 0));
+        filter: blur(1.8px);
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .screen {
+        position: relative;
+        width: 100%;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid #070707;
+        border-radius: 0.84rem;
+        background:
+          radial-gradient(120% 74% at 50% 2%, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 18%, rgba(255, 255, 255, 0) 42%),
+          radial-gradient(120% 100% at 50% 118%, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0) 44%),
+          linear-gradient(180deg, var(--crt-bg-top) 0%, var(--crt-bg-mid) 20%, var(--crt-bg-bottom) 100%);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.12),
+          inset 0 -10px 20px rgba(0, 0, 0, 0.1),
+          inset 0 0 32px rgba(0, 0, 0, 0.22),
+          inset 14px 0 22px rgba(255, 255, 255, 0.025),
+          inset -14px 0 24px rgba(0, 0, 0, 0.09);
+        z-index: 1;
+      }
+
+      .screen::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.54;
+        background:
+          linear-gradient(126deg, rgba(255, 255, 255, 0.24) 0%, rgba(255, 255, 255, 0.14) 8%, transparent 22%, transparent 100%),
+          radial-gradient(110% 84% at 50% -10%, rgba(255, 255, 255, 0.14) 0%, transparent 42%),
+          repeating-linear-gradient(180deg, rgba(18, 18, 18, 0.032) 0 1px, transparent 1px 3px);
+      }
+
+      .screen::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          radial-gradient(118% 112% at 50% 50%, transparent 58%, rgba(0, 0, 0, 0.19) 100%);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.09),
+          inset 0 0 56px rgba(0, 0, 0, 0.26),
+          inset 14px 0 18px rgba(0, 0, 0, 0.05),
+          inset -16px 0 20px rgba(0, 0, 0, 0.1),
+          inset 0 -8px 12px rgba(0, 0, 0, 0.08),
+          inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      }
+
+      .machine__utility {
+        position: relative;
+        width: min(100%, 50.5rem);
+        min-height: 4.92rem;
+        margin-top: 0.18rem;
+        z-index: 2;
+      }
+
+      .machine__utility::before {
+        content: "";
+        position: absolute;
+        left: 1.16rem;
+        right: 1.16rem;
+        top: -0.22rem;
+        height: 1.14rem;
+        background: linear-gradient(180deg, rgba(88, 67, 36, 0.24), rgba(88, 67, 36, 0));
+        filter: blur(2px);
+        pointer-events: none;
+      }
+
+      .machine__utility::after {
+        content: "";
+        position: absolute;
+        left: 1.58rem;
+        right: 1.58rem;
+        bottom: 0.08rem;
+        height: 0.2rem;
+        border-radius: 0 0 0.48rem 0.48rem;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(156, 127, 82, 0.06) 55%, rgba(156, 127, 82, 0) 100%);
+        opacity: 0.26;
+        pointer-events: none;
+      }
+
+      .machine__lower {
+        position: relative;
+        width: calc(100% + var(--shell-side-pad) + var(--shell-side-pad));
+        max-width: calc(100% + var(--shell-side-pad) + var(--shell-side-pad));
+        min-height: 3.92rem;
+        margin-top: -0.24rem;
+        margin-inline: calc(0px - var(--shell-side-pad));
+        margin-bottom: calc(0px - var(--shell-bottom-pad));
+        border: 1px solid rgba(177, 159, 126, 0.92);
+        border-top: 1px solid rgba(118, 93, 56, 0.76);
+        border-radius: 0 0 1.38rem 1.38rem;
+        background:
+          linear-gradient(180deg, rgba(120, 94, 57, 0.12) 0%, rgba(255, 255, 255, 0) 0.72rem),
+          radial-gradient(115% 150% at -12% 50%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0) 48%),
+          radial-gradient(115% 150% at 112% 50%, rgba(139, 114, 76, 0.14) 0%, rgba(139, 114, 76, 0) 48%),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.15) 0%,
+            transparent 11%,
+            transparent 89%,
+            rgba(132, 109, 73, 0.08) 100%
+          ),
+          linear-gradient(180deg, rgba(238, 229, 211, 0.99) 0%, rgba(216, 201, 171, 0.99) 100%);
+        box-shadow:
+          0 -1px 0 rgba(255, 255, 255, 0.18),
+          inset 0 1px 0 rgba(255, 255, 255, 0.52),
+          inset 0 18px 20px rgba(137, 113, 75, 0.14),
+          inset 22px 0 22px rgba(151, 127, 87, 0.05),
+          inset -22px 0 22px rgba(151, 127, 87, 0.05),
+          0 10px 18px rgba(96, 77, 45, 0.13);
+        isolation: isolate;
+        z-index: 1;
+      }
+
+      .machine__lower::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        height: 0.34rem;
+        background: linear-gradient(180deg, rgba(86, 64, 31, 0.34), rgba(255, 255, 255, 0.16));
+        z-index: 0;
+      }
+
+      .machine__lower::after {
+        content: "";
+        position: absolute;
+        inset: 0.5rem 0 0;
+        border-radius: 0 0 1.1rem 1.1rem;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.2),
+          inset 0 18px 18px rgba(137, 113, 75, 0.1),
+          inset 0 -1px 0 rgba(162, 135, 94, 0.12);
+        opacity: 0.88;
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .machine__signature {
+        position: absolute;
+        left: 0.96rem;
+        bottom: 0.72rem;
+        width: 0.96rem;
+        height: 1.16rem;
+        display: inline-block;
+        z-index: 1;
+      }
+
+      .machine__apple {
+        display: block;
+        width: 100%;
+        height: 100%;
+        filter:
+          drop-shadow(0 1px 0 rgba(255, 255, 255, 0.42))
+          drop-shadow(0 1px 1px rgba(98, 80, 48, 0.16));
+      }
+
+      .machine__apple svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+      .machine__drive {
+        position: absolute;
+        right: 0.78rem;
+        top: 0.58rem;
+        width: 10.9rem;
+        height: 2.42rem;
+        background: none;
+        border: 0;
+        box-shadow: none;
+        z-index: 1;
+      }
+
+      .machine__drive::before,
+      .machine__drive::after {
+        content: "";
+        position: absolute;
+        background: linear-gradient(
+          180deg,
+          rgba(191, 173, 138, 0.92) 0%,
+          rgba(244, 237, 220, 0.98) 30%,
+          rgba(206, 188, 153, 0.98) 100%
+        );
+        box-shadow:
+          inset 0 2px 5px rgba(121, 98, 59, 0.16),
+          inset 0 -1px 0 rgba(255, 255, 255, 0.48);
+      }
+
+      .machine__drive::before {
+        left: 0;
+        top: 0.62rem;
+        width: 8.58rem;
+        height: 0.84rem;
+        border: 1px solid rgba(143, 124, 91, 0.46);
+        border-right: 0;
+        border-radius: 0.12rem 0 0 0.12rem;
+      }
+
+      .machine__drive::after {
+        right: 0.56rem;
+        top: 0.14rem;
+        width: 1.92rem;
+        height: 1.32rem;
+        border: 1px solid rgba(143, 124, 91, 0.46);
+        border-radius: 0.12rem;
+      }
+
+      .machine__drive-slot {
+        position: absolute;
+        left: 0.44rem;
+        top: 0.95rem;
+        width: 8.04rem;
+        height: 0.12rem;
+        border-radius: 0.04rem;
+        background: #121212;
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.08),
+          0 -1px 0 rgba(108, 87, 54, 0.14);
+      }
+
+      .machine__drive-lip {
+        position: absolute;
+        left: 0.22rem;
+        top: 0.76rem;
+        width: 8.36rem;
+        height: 0.08rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.48);
+        box-shadow:
+          0 0.5rem 0 rgba(176, 156, 121, 0.28),
+          0 0.58rem 0 rgba(110, 87, 50, 0.12);
+      }
+
+      .machine__drive-eject {
+        position: absolute;
+        right: 0.84rem;
+        top: 0.5rem;
+        width: 0.74rem;
+        height: 0.74rem;
+        border: 1px solid rgba(140, 119, 84, 0.54);
+        border-radius: 0.08rem;
+        background: linear-gradient(
+          180deg,
+          rgba(249, 241, 224, 0.98) 0%,
+          rgba(212, 195, 163, 0.98) 100%
+        );
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.4),
+          inset 0 -1px 0 rgba(124, 100, 62, 0.14);
+      }
+
+      .machine__drive-eject::before {
+        content: "";
+        position: absolute;
+        inset: 0.14rem;
+        border-top: 1px solid rgba(120, 98, 64, 0.34);
+        border-left: 1px solid rgba(120, 98, 64, 0.24);
+        opacity: 0.75;
+      }
+
+      .machine__drive-dot {
+        position: absolute;
+        right: 0.1rem;
+        top: 0.9rem;
+        width: 0.08rem;
+        height: 0.08rem;
+        border-radius: 50%;
+        background: rgba(82, 61, 32, 0.86);
+      }
+
+      .machine__switch {
+        position: absolute;
+        right: 0.28rem;
+        top: 0.78rem;
+        width: 1.56rem;
+        height: 1.06rem;
+        border: 1px solid rgba(146, 129, 100, 0.7);
+        border-radius: 0.16rem;
+        background: linear-gradient(
+          180deg,
+          rgba(245, 237, 223, 0.96) 0%,
+          rgba(217, 204, 181, 0.96) 100%
+        );
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.56),
+          inset 0 -1px 0 rgba(102, 82, 49, 0.1),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+        z-index: 1;
+      }
+
+      .machine__switch::before {
+        content: "";
+        position: absolute;
+        right: 0.18rem;
+        top: 0.16rem;
+        width: 0.34rem;
+        height: 0.72rem;
+        border-radius: 0.06rem;
+        background: linear-gradient(180deg, rgba(189, 178, 159, 0.98), rgba(156, 141, 115, 0.98));
+      }
+
+      .machine__switch::after {
+        content: "";
+        position: absolute;
+        left: 0.18rem;
+        top: 0.28rem;
+        right: 0.68rem;
+        height: 0.14rem;
+        border-radius: 999px;
+        background: rgba(131, 108, 72, 0.2);
+        box-shadow: 0 0.22rem 0 rgba(255, 255, 255, 0.14);
+      }
+
+      .machine__foot {
+        position: absolute;
+        bottom: -0.08rem;
+        width: 0.88rem;
+        height: 0.2rem;
+        border-radius: 0.08rem;
+        background: rgba(213, 202, 182, 0.98);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        z-index: 1;
+      }
+
+      .machine__foot--left {
+        left: 0.9rem;
+      }
+
+      .machine__foot--right {
+        right: 0.9rem;
+      }
+
+      .menu-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--space-3);
+        padding: 0.28rem 0.5rem 0.24rem;
+        border-bottom: 1px solid var(--crt-line-soft);
+        background: linear-gradient(180deg, rgba(252, 251, 246, 0.86) 0%, rgba(232, 229, 220, 0.68) 100%);
+        font-family: var(--font-body);
+        font-size: 0.84rem;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        color: var(--crt-ink);
+      }
+
+      .menu-bar__left,
+      .menu-bar__right {
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+      }
+
+      .menu-bar__mark {
+        width: 0.76rem;
+        height: 0.76rem;
+        display: inline-block;
+        flex: none;
+      }
+
+      .menu-bar__mark svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+        shape-rendering: crispEdges;
+      }
+
+      .desktop {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.46rem;
+        padding: 0.42rem;
+        flex: 1;
+        min-height: 0;
+        overflow: auto;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(24, 22, 19, 0.45) transparent;
+      }
+
+      .desktop::-webkit-scrollbar {
+        width: 0.48rem;
+      }
+
+      .desktop::-webkit-scrollbar-thumb {
+        background: rgba(24, 22, 19, 0.42);
+      }
+
+      .window {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        border: 1.5px solid var(--crt-line);
+        background: var(--crt-paper);
+        box-shadow: 2px 2px 0 var(--crt-shadow);
+      }
+
+      .window__toggle {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 0.28rem 0.42rem 0.26rem;
+        border: 0;
+        border-bottom: 1.5px solid var(--crt-line);
+        background: linear-gradient(180deg, var(--crt-paper-strong) 0%, var(--crt-paper-deep) 100%);
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition:
+          background-color 180ms ease,
+          transform 220ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .window__toggle:hover {
+        background: linear-gradient(180deg, rgba(252, 251, 246, 0.98) 0%, rgba(242, 239, 232, 0.98) 100%);
+      }
+
+      .window__toggle:active {
+        transform: translateY(1px);
+      }
+
+      .window__toggle:focus-visible {
+        outline: var(--focus-ring);
+        outline-offset: -5px;
+      }
+
+      .window__toggle::after {
+        content: "";
+        position: absolute;
+        inset: 50% 0.45rem auto calc(0.45rem + 1.05rem + 0.45rem);
+        height: 1px;
+        transform: translateY(-50%);
+        opacity: 0.22;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(30, 27, 23, 0.75) 0 6px,
+          transparent 6px 9px
+        );
+      }
+
+      .window__control {
+        position: relative;
+        z-index: 1;
+        flex: none;
+        width: 0.82rem;
+        height: 0.82rem;
+        border: 1.5px solid var(--crt-line);
+        background: rgba(248, 246, 239, 0.96);
+      }
+
+      .window__control::before,
+      .window__control::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 0.45rem;
+        height: 2px;
+        background: var(--ink);
+        transform: translate(-50%, -50%);
+        transition: transform 260ms cubic-bezier(0.19, 1, 0.22, 1), opacity 180ms ease;
+      }
+
+      .window__control::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      .window.is-open .window__control::after {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(90deg) scaleX(0.3);
+      }
+
+      .window__title {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.48rem;
+        padding-inline: 0.25rem;
+        font-family: var(--font-body);
+        font-size: 0.98rem;
+        letter-spacing: 0.02em;
+        text-transform: none;
+        text-align: left;
+        background: rgba(248, 246, 239, 0.72);
+        color: var(--crt-ink);
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      .window__title::before {
+        content: none;
+      }
+
+      .pixel-icon {
+        width: 0.82rem;
+        height: 0.82rem;
+        flex: none;
+        display: inline-block;
+        color: currentColor;
+      }
+
+      .pixel-icon svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        fill: currentColor;
+        shape-rendering: crispEdges;
+      }
+
+      .pixel-icon--doc {
+        width: 0.78rem;
+      }
+
+      .pixel-icon--toolbox {
+        width: 0.9rem;
+      }
+
+      .pixel-icon--contact {
+        width: 0.84rem;
+      }
+
+      .pixel-icon--qr {
+        width: 0.74rem;
+        height: 0.74rem;
+      }
+
+      .pixel-icon--wechat {
+        width: 0.82rem;
+        height: 0.82rem;
+      }
+
+      .pixel-icon--note {
+        width: 0.76rem;
+        height: 0.76rem;
+      }
+
+      .pixel-icon--link,
+      .pixel-icon--mail {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+
+      .pixel-icon--github {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+
+      .window__panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 360ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .window__panel-inner {
+        min-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-0.5rem);
+        transition:
+          opacity 180ms ease,
+          transform 320ms cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 360ms;
+      }
+
+      .window.is-open .window__panel {
+        grid-template-rows: 1fr;
+      }
+
+      .window.is-open .window__panel-inner {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 220ms ease 80ms,
+          transform 360ms cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 0s;
+      }
+
+      .window__body {
+        padding: 0.7rem 0.75rem 0.75rem;
+        background: rgba(248, 246, 239, 0.64);
+      }
+
+      .about-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1.38fr) clamp(5.2rem, 11vw, 6.4rem);
+        gap: 0.7rem;
+        align-items: start;
+      }
+
+      .about-main {
+        min-width: 0;
+      }
+
+      .portrait-card {
+        position: relative;
+        justify-self: end;
+        width: clamp(5.2rem, 11vw, 6.4rem);
+        padding: 0.22rem;
+        border: 1.5px solid var(--crt-line);
+        background: rgba(245, 243, 235, 0.94);
+        box-shadow: 2px 2px 0 var(--crt-shadow);
+      }
+
+      .portrait-card img {
+        width: 100%;
+        height: auto;
+        border: 1px solid rgba(17, 17, 17, 0.42);
+        filter: grayscale(1) contrast(1.22) brightness(1.03);
+        image-rendering: crisp-edges;
+        mix-blend-mode: multiply;
+        background: #f4f0e5;
+      }
+
+      .window--about {
+        grid-column: 1 / -1;
+      }
+
+      .window--contact {
+        grid-column: 1 / -1;
+      }
+
+      .identity {
+        display: grid;
+        gap: 0.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .identity__eyebrow {
+        margin: 0;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        letter-spacing: 0.04em;
+        text-transform: none;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(1.6rem, 4.5vw, 2.8rem);
+        line-height: 0.92;
+        font-weight: 700;
+        font-family: var(--font-human);
+        color: var(--crt-ink);
+      }
+
+      h2 {
+        font-family: var(--font-body);
+        font-size: clamp(1.45rem, 2vw, 1.7rem);
+        line-height: 0.95;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.55rem;
+      }
+
+      h3 {
+        font-family: var(--font-body);
+        font-size: 1.18rem;
+        line-height: 1;
+        font-weight: 400;
+        letter-spacing: 0.03em;
+      }
+
+      .prose {
+        display: grid;
+        gap: 0.44rem;
+        max-width: min(100%, 84ch);
+        font-family: var(--font-body);
+        font-size: clamp(1.02rem, 1.45vw, 1.26rem);
+        line-height: 1.03;
+        letter-spacing: 0.015em;
+        color: var(--crt-ink);
+      }
+
+      .info-copy {
+        max-width: min(100%, 68ch);
+        font-family: var(--font-body);
+        font-size: clamp(1rem, 1.4vw, 1.18rem);
+        line-height: 1.03;
+        letter-spacing: 0.015em;
+        color: var(--crt-ink);
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-4);
+        align-items: start;
+      }
+
+      .contact-stack {
+        display: grid;
+        gap: 0.72rem;
+      }
+
+      .contact-direct {
+        display: grid;
+        gap: 0.4rem;
+      }
+
+      .contact-direct__item {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.68rem;
+        min-height: 44px;
+        padding: 0.44rem 0.56rem;
+        border: 1.5px solid var(--crt-line);
+        background: linear-gradient(180deg, var(--crt-paper-strong) 0%, var(--crt-paper-deep) 100%);
+        color: inherit;
+        text-decoration: none;
+        box-shadow: 2px 2px 0 rgba(17, 17, 17, 0.18);
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .contact-direct__item:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0 rgba(17, 17, 17, 0.2);
+        background: rgba(252, 251, 246, 0.98);
+      }
+
+      .contact-direct__item:active {
+        transform: translateY(1px);
+      }
+
+      .contact-direct__item:focus-visible {
+        outline: var(--focus-ring);
+        outline-offset: 4px;
+      }
+
+      .contact-direct__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.42rem;
+        min-width: 0;
+        font-family: var(--font-body);
+        font-size: 0.98rem;
+        line-height: 1;
+        color: var(--crt-ink);
+        white-space: nowrap;
+      }
+
+      .contact-direct__value {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        font-family: var(--font-mono);
+        font-size: 0.73rem;
+        line-height: 1.35;
+        letter-spacing: 0.02em;
+        color: var(--muted);
+      }
+
+      .contact-direct__action {
+        justify-self: end;
+        padding: 0.18rem 0.42rem;
+        border: 1.5px solid var(--crt-line);
+        background: rgba(248, 246, 239, 0.98);
+        font-family: var(--font-body);
+        font-size: 0.88rem;
+        line-height: 1;
+        white-space: nowrap;
+      }
+
+      .contact-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-height: 1rem;
+        color: var(--muted);
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      .contact-divider::after {
+        content: "";
+        flex: 1;
+        height: 1px;
+        opacity: 0.24;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(30, 27, 23, 0.85) 0 6px,
+          transparent 6px 10px
+        );
+      }
+
+      .contact-fold {
+        border: 1.5px solid var(--crt-line);
+        background: var(--crt-paper);
+        box-shadow: 2px 2px 0 var(--crt-shadow);
+      }
+
+      .contact-fold__toggle {
+        position: relative;
+        display: flex;
+        width: 100%;
+        align-items: center;
+        gap: var(--space-2);
+        padding: 0.3rem 0.44rem 0.28rem;
+        border: 0;
+        border-bottom: 1.5px solid var(--crt-line);
+        background: linear-gradient(180deg, var(--crt-paper-strong) 0%, var(--crt-paper-deep) 100%);
+        color: inherit;
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition:
+          background-color 180ms ease,
+          transform 220ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .contact-fold__toggle:hover {
+        background: linear-gradient(180deg, rgba(252, 251, 246, 0.98) 0%, rgba(242, 239, 232, 0.98) 100%);
+      }
+
+      .contact-fold__toggle:active {
+        transform: translateY(1px);
+      }
+
+      .contact-fold__toggle:focus-visible {
+        outline: var(--focus-ring);
+        outline-offset: -5px;
+      }
+
+      .contact-fold__toggle::after {
+        content: "";
+        position: absolute;
+        inset: 50% 0.45rem auto calc(0.45rem + 1.05rem + 0.45rem);
+        height: 1px;
+        transform: translateY(-50%);
+        opacity: 0.22;
+        background: repeating-linear-gradient(
+          90deg,
+          rgba(30, 27, 23, 0.75) 0 6px,
+          transparent 6px 9px
+        );
+      }
+
+      .contact-fold__control {
+        position: relative;
+        z-index: 1;
+        flex: none;
+        width: 0.8rem;
+        height: 0.8rem;
+        border: 1.5px solid var(--crt-line);
+        background: rgba(248, 246, 239, 0.96);
+      }
+
+      .contact-fold__control::before,
+      .contact-fold__control::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 0.42rem;
+        height: 2px;
+        background: var(--ink);
+        transform: translate(-50%, -50%);
+        transition: transform 260ms cubic-bezier(0.19, 1, 0.22, 1), opacity 180ms ease;
+      }
+
+      .contact-fold__control::after {
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+
+      .contact-fold.is-open .contact-fold__control::after {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(90deg) scaleX(0.3);
+      }
+
+      .contact-fold__label {
+        position: relative;
+        z-index: 1;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 0.48rem;
+        padding-inline: 0.25rem;
+        background: rgba(248, 246, 239, 0.72);
+        font-family: var(--font-body);
+        font-size: 0.96rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        color: var(--crt-ink);
+        min-width: 0;
+        white-space: nowrap;
+      }
+
+      .contact-fold__label::before {
+        content: none;
+      }
+
+      .contact-fold__kind {
+        display: none;
+      }
+
+      .contact-fold__panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 320ms cubic-bezier(0.19, 1, 0.22, 1);
+      }
+
+      .contact-fold__panel-inner {
+        min-height: 0;
+        overflow: hidden;
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-0.45rem);
+        transition:
+          opacity 180ms ease,
+          transform 280ms cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 320ms;
+      }
+
+      .contact-fold.is-open .contact-fold__panel {
+        grid-template-rows: 1fr;
+      }
+
+      .contact-fold.is-open .contact-fold__panel-inner {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+          opacity 200ms ease 60ms,
+          transform 320ms cubic-bezier(0.19, 1, 0.22, 1),
+          visibility 0s linear 0s;
+      }
+
+      .contact-fold__body {
+        display: grid;
+        gap: var(--space-3);
+        padding: 0.62rem;
+      }
+
+      .qr-link {
+        display: block;
+        min-height: 44px;
+        padding: 0.38rem;
+        border: 1.5px solid var(--crt-line);
+        background: rgba(249, 247, 240, 0.94);
+        cursor: pointer;
+        text-decoration: none;
+        transition:
+          transform 180ms ease,
+          box-shadow 180ms ease,
+          background-color 180ms ease;
+      }
+
+      .qr-link:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 2px 2px 0 var(--crt-shadow);
+        background: rgba(255, 255, 251, 0.98);
+      }
+
+      .qr-link:focus-visible {
+        outline: var(--focus-ring);
+        outline-offset: 5px;
+      }
+
+      .qr-link img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: auto;
+        border: 1px solid rgba(17, 17, 17, 0.36);
+      }
+      @media (max-width: 860px) {
+        .desktop {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 0.32rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 700px) {
+        .contact-direct__item {
+          grid-template-columns: auto minmax(0, 1fr);
+        }
+
+        .contact-direct__action {
+          grid-column: 1 / -1;
+          justify-self: start;
+        }
+      }
+
+      @media (max-width: 620px) {
+        body::before {
+          background-size: 17rem 17rem;
+          background-position: center top;
+        }
+
+        .menu-bar {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        .menu-bar__left,
+        .menu-bar__right {
+          flex-wrap: wrap;
+        }
+
+        .window__toggle {
+          flex-wrap: nowrap;
+          gap: 0.32rem;
+          padding: 0.24rem 0.3rem 0.22rem;
+        }
+
+        .window__title {
+          width: auto;
+          order: initial;
+          text-align: left;
+          font-size: 0.84rem;
+          gap: 0.28rem;
+        }
+
+        .pixel-icon {
+          width: 0.72rem;
+          height: 0.72rem;
+        }
+
+        .window__toggle::after {
+          inset: 50% 0.28rem auto calc(0.28rem + 0.88rem + 0.34rem);
+        }
+
+        .contact-fold__toggle {
+          flex-wrap: nowrap;
+          gap: 0.32rem;
+          padding: 0.24rem 0.3rem 0.22rem;
+        }
+
+        .contact-fold__label {
+          width: auto;
+          order: initial;
+          font-size: 0.84rem;
+          gap: 0.28rem;
+        }
+
+        .about-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .portrait-card {
+          justify-self: start;
+          width: min(8.8rem, 52vw);
+          order: -1;
+        }
+
+        .machine {
+          width: min(100%, 23.5rem);
+        }
+
+        .machine__handle {
+          width: 73%;
+          height: 1.18rem;
+          margin-bottom: -0.24rem;
+        }
+
+        .machine__shell::before {
+          inset: 0.22rem;
+          border-radius: 1.2rem;
+        }
+
+        .machine__shell::after {
+          left: 0.56rem;
+          right: 0.56rem;
+        }
+
+        .screen-well {
+          width: min(100%, 20.6rem);
+          padding: 0.56rem 0.62rem 0.72rem;
+        }
+
+        .screen-well::before {
+          inset: 0.2rem 0.24rem 0.32rem;
+        }
+
+        .screen-well::after {
+          left: 0.62rem;
+          right: 0.62rem;
+          bottom: 0.2rem;
+          height: 0.42rem;
+        }
+
+        .screen-frame {
+          padding: 0.44rem;
+          border-radius: 0.84rem;
+        }
+
+        .screen-frame::before {
+          inset: 0.12rem;
+        }
+
+        .screen-frame::after {
+          left: 0.46rem;
+          right: 0.46rem;
+          bottom: -0.3rem;
+          height: 0.38rem;
+        }
+
+        .screen {
+          border-radius: 0.76rem;
+        }
+
+        .machine__utility {
+          min-height: 4rem;
+        }
+
+        .machine__utility::before {
+          left: 0.96rem;
+          right: 0.96rem;
+          top: -0.18rem;
+          height: 0.9rem;
+        }
+
+        .machine__utility::after {
+          left: 1.18rem;
+          right: 1.18rem;
+          bottom: 0.06rem;
+          height: 0.16rem;
+        }
+
+        .machine__signature {
+          left: 0.72rem;
+          bottom: 0.62rem;
+          width: 0.78rem;
+          height: 0.96rem;
+        }
+
+        .machine__drive {
+          width: 8.16rem;
+          height: 1.9rem;
+          top: 0.48rem;
+          right: 0.48rem;
+        }
+
+        .machine__drive::before {
+          top: 0.5rem;
+          width: 6.34rem;
+          height: 0.68rem;
+        }
+
+        .machine__drive::after {
+          right: 0.42rem;
+          top: 0.08rem;
+          width: 1.5rem;
+          height: 1.1rem;
+        }
+
+        .machine__drive-slot {
+          left: 0.32rem;
+          top: 0.76rem;
+          width: 5.98rem;
+        }
+
+        .machine__drive-lip {
+          left: 0.16rem;
+          top: 0.64rem;
+          width: 6.18rem;
+        }
+
+        .machine__drive-eject {
+          right: 0.68rem;
+          top: 0.4rem;
+          width: 0.58rem;
+          height: 0.58rem;
+        }
+
+        .machine__drive-dot {
+          right: 0.08rem;
+          top: 0.72rem;
+        }
+
+        .machine__switch {
+          width: 1.18rem;
+          height: 0.82rem;
+          right: 0.3rem;
+          top: 0.68rem;
+        }
+
+        .machine__switch::before {
+          right: 0.14rem;
+          top: 0.12rem;
+          width: 0.24rem;
+          height: 0.52rem;
+        }
+
+        .machine__switch::after {
+          left: 0.14rem;
+          top: 0.22rem;
+          right: 0.48rem;
+          height: 0.1rem;
+        }
+
+        .machine__lower {
+          width: calc(100% + var(--shell-side-pad) + var(--shell-side-pad));
+          max-width: calc(100% + var(--shell-side-pad) + var(--shell-side-pad));
+          min-height: 3.08rem;
+          margin-inline: calc(0px - var(--shell-side-pad));
+          margin-bottom: calc(0px - var(--shell-bottom-pad));
+        }
+
+        .machine__foot {
+          width: 0.64rem;
+        }
+
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#content">Skip to content</a>
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      width="0"
+      height="0"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <symbol id="pixel-icon-mac" viewBox="0 0 16 16">
+        <rect x="4" y="1" width="8" height="1"></rect>
+        <rect x="3" y="2" width="1" height="10"></rect>
+        <rect x="12" y="2" width="1" height="10"></rect>
+        <rect x="4" y="12" width="8" height="1"></rect>
+        <rect x="6" y="13" width="4" height="1"></rect>
+        <rect x="5" y="4" width="6" height="1"></rect>
+        <rect x="5" y="5" width="1" height="3"></rect>
+        <rect x="10" y="5" width="1" height="3"></rect>
+        <rect x="6" y="5" width="1" height="1"></rect>
+        <rect x="9" y="5" width="1" height="1"></rect>
+        <rect x="6" y="8" width="4" height="1"></rect>
+        <rect x="7" y="7" width="2" height="1"></rect>
+        <rect x="8" y="10" width="2" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-doc" viewBox="0 0 16 16">
+        <rect x="4" y="1" width="7" height="1"></rect>
+        <rect x="3" y="2" width="1" height="12"></rect>
+        <rect x="11" y="2" width="1" height="2"></rect>
+        <rect x="10" y="3" width="1" height="1"></rect>
+        <rect x="9" y="4" width="4" height="1"></rect>
+        <rect x="12" y="5" width="1" height="9"></rect>
+        <rect x="4" y="14" width="8" height="1"></rect>
+        <rect x="5" y="6" width="5" height="1"></rect>
+        <rect x="5" y="8" width="6" height="1"></rect>
+        <rect x="5" y="10" width="5" height="1"></rect>
+        <rect x="5" y="12" width="4" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-toolbox" viewBox="0 0 16 16">
+        <rect x="6" y="3" width="4" height="1"></rect>
+        <rect x="5" y="4" width="1" height="2"></rect>
+        <rect x="10" y="4" width="1" height="2"></rect>
+        <rect x="4" y="5" width="8" height="1"></rect>
+        <rect x="3" y="6" width="1" height="6"></rect>
+        <rect x="12" y="6" width="1" height="6"></rect>
+        <rect x="4" y="8" width="8" height="1"></rect>
+        <rect x="7" y="9" width="2" height="1"></rect>
+        <rect x="4" y="12" width="8" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-contact" viewBox="0 0 16 16">
+        <rect x="2" y="4" width="12" height="1"></rect>
+        <rect x="1" y="5" width="1" height="7"></rect>
+        <rect x="14" y="5" width="1" height="7"></rect>
+        <rect x="2" y="12" width="12" height="1"></rect>
+        <rect x="4" y="6" width="2" height="2"></rect>
+        <rect x="3" y="8" width="4" height="2"></rect>
+        <rect x="8" y="6" width="4" height="1"></rect>
+        <rect x="8" y="8" width="4" height="1"></rect>
+        <rect x="8" y="10" width="3" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-qr" viewBox="0 0 16 16">
+        <rect x="1" y="1" width="5" height="1"></rect>
+        <rect x="1" y="2" width="1" height="4"></rect>
+        <rect x="5" y="2" width="1" height="4"></rect>
+        <rect x="1" y="5" width="5" height="1"></rect>
+        <rect x="3" y="3" width="1" height="1"></rect>
+        <rect x="10" y="1" width="5" height="1"></rect>
+        <rect x="10" y="2" width="1" height="4"></rect>
+        <rect x="14" y="2" width="1" height="4"></rect>
+        <rect x="10" y="5" width="5" height="1"></rect>
+        <rect x="12" y="3" width="1" height="1"></rect>
+        <rect x="1" y="10" width="5" height="1"></rect>
+        <rect x="1" y="11" width="1" height="4"></rect>
+        <rect x="5" y="11" width="1" height="4"></rect>
+        <rect x="1" y="14" width="5" height="1"></rect>
+        <rect x="3" y="12" width="1" height="1"></rect>
+        <rect x="8" y="7" width="1" height="1"></rect>
+        <rect x="10" y="7" width="1" height="1"></rect>
+        <rect x="7" y="8" width="1" height="1"></rect>
+        <rect x="9" y="8" width="2" height="1"></rect>
+        <rect x="8" y="10" width="1" height="1"></rect>
+        <rect x="10" y="10" width="1" height="1"></rect>
+        <rect x="7" y="11" width="2" height="1"></rect>
+        <rect x="10" y="12" width="2" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-wechat" viewBox="0 0 16 16">
+        <rect x="9" y="1" width="4" height="1"></rect>
+        <rect x="8" y="2" width="1" height="3"></rect>
+        <rect x="13" y="2" width="1" height="3"></rect>
+        <rect x="9" y="5" width="4" height="1"></rect>
+        <rect x="10" y="6" width="2" height="1"></rect>
+        <rect x="11" y="7" width="1" height="1"></rect>
+        <rect x="10" y="3" width="1" height="1"></rect>
+        <rect x="12" y="3" width="1" height="1"></rect>
+        <rect x="3" y="4" width="7" height="1"></rect>
+        <rect x="2" y="5" width="1" height="4"></rect>
+        <rect x="10" y="5" width="1" height="4"></rect>
+        <rect x="3" y="9" width="7" height="1"></rect>
+        <rect x="4" y="10" width="3" height="1"></rect>
+        <rect x="5" y="11" width="1" height="1"></rect>
+        <rect x="4" y="6" width="1" height="1"></rect>
+        <rect x="7" y="6" width="1" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-note" viewBox="0 0 16 16">
+        <rect x="4" y="2" width="8" height="1"></rect>
+        <rect x="3" y="3" width="1" height="10"></rect>
+        <rect x="12" y="3" width="1" height="10"></rect>
+        <rect x="4" y="13" width="8" height="1"></rect>
+        <rect x="5" y="4" width="1" height="1"></rect>
+        <rect x="5" y="7" width="1" height="1"></rect>
+        <rect x="5" y="10" width="1" height="1"></rect>
+        <rect x="7" y="5" width="4" height="1"></rect>
+        <rect x="7" y="7" width="3" height="1"></rect>
+        <rect x="7" y="9" width="4" height="1"></rect>
+        <rect x="7" y="11" width="2" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-link" viewBox="0 0 16 16">
+        <rect x="4" y="4" width="4" height="1"></rect>
+        <rect x="3" y="5" width="1" height="3"></rect>
+        <rect x="8" y="5" width="1" height="1"></rect>
+        <rect x="7" y="6" width="1" height="1"></rect>
+        <rect x="6" y="7" width="1" height="1"></rect>
+        <rect x="5" y="8" width="1" height="1"></rect>
+        <rect x="4" y="9" width="1" height="3"></rect>
+        <rect x="5" y="12" width="4" height="1"></rect>
+        <rect x="8" y="8" width="1" height="1"></rect>
+        <rect x="9" y="7" width="1" height="1"></rect>
+        <rect x="10" y="6" width="1" height="1"></rect>
+        <rect x="11" y="5" width="1" height="3"></rect>
+        <rect x="8" y="11" width="4" height="1"></rect>
+        <rect x="8" y="4" width="4" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-github" viewBox="0 0 16 16">
+        <rect x="4" y="1" width="2" height="1"></rect>
+        <rect x="10" y="1" width="2" height="1"></rect>
+        <rect x="3" y="2" width="3" height="1"></rect>
+        <rect x="10" y="2" width="3" height="1"></rect>
+        <rect x="2" y="3" width="4" height="1"></rect>
+        <rect x="10" y="3" width="4" height="1"></rect>
+        <rect x="2" y="4" width="12" height="1"></rect>
+        <rect x="1" y="5" width="14" height="1"></rect>
+        <rect x="1" y="6" width="14" height="1"></rect>
+        <rect x="1" y="7" width="4" height="1"></rect>
+        <rect x="6" y="7" width="4" height="1"></rect>
+        <rect x="11" y="7" width="4" height="1"></rect>
+        <rect x="1" y="8" width="4" height="1"></rect>
+        <rect x="6" y="8" width="4" height="1"></rect>
+        <rect x="11" y="8" width="4" height="1"></rect>
+        <rect x="2" y="9" width="12" height="1"></rect>
+        <rect x="2" y="10" width="5" height="1"></rect>
+        <rect x="9" y="10" width="5" height="1"></rect>
+        <rect x="3" y="11" width="10" height="1"></rect>
+        <rect x="4" y="12" width="8" height="1"></rect>
+        <rect x="5" y="13" width="6" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-mail" viewBox="0 0 16 16">
+        <rect x="2" y="4" width="12" height="1"></rect>
+        <rect x="1" y="5" width="1" height="7"></rect>
+        <rect x="14" y="5" width="1" height="7"></rect>
+        <rect x="2" y="12" width="12" height="1"></rect>
+        <rect x="3" y="6" width="1" height="1"></rect>
+        <rect x="4" y="7" width="1" height="1"></rect>
+        <rect x="5" y="8" width="1" height="1"></rect>
+        <rect x="6" y="9" width="1" height="1"></rect>
+        <rect x="7" y="10" width="2" height="1"></rect>
+        <rect x="9" y="9" width="1" height="1"></rect>
+        <rect x="10" y="8" width="1" height="1"></rect>
+        <rect x="11" y="7" width="1" height="1"></rect>
+        <rect x="12" y="6" width="1" height="1"></rect>
+      </symbol>
+      <symbol id="pixel-icon-finder" viewBox="0 0 16 16">
+        <rect x="2" y="1" width="11" height="1"></rect>
+        <rect x="1" y="2" width="1" height="11"></rect>
+        <rect x="13" y="2" width="1" height="11"></rect>
+        <rect x="2" y="13" width="11" height="1"></rect>
+        <rect x="7" y="2" width="1" height="11"></rect>
+        <rect x="4" y="4" width="1" height="1"></rect>
+        <rect x="10" y="4" width="1" height="1"></rect>
+        <rect x="9" y="6" width="1" height="3"></rect>
+        <rect x="8" y="9" width="1" height="1"></rect>
+        <rect x="9" y="10" width="1" height="1"></rect>
+        <rect x="4" y="10" width="4" height="1"></rect>
+      </symbol>
+      <symbol id="classic-apple" viewBox="0 0 24 24">
+        <defs>
+          <clipPath id="classic-apple-clip">
+            <path d="M12.152 6.896c-.948 0-2.415-.99-3.96-.99-2.043 0-3.93 1.188-4.973 3.03-2.13 3.675-.543 9.117 1.512 12.054 1.005 1.43 2.205 3.03 3.78 2.97 1.515-.06 2.085-.885 3.915-.885 1.815 0 2.325.885 3.945.855 1.635-.03 2.67-1.455 3.675-2.895 1.155-1.695 1.635-3.345 1.665-3.435-.045-.015-3.195-1.23-3.225-4.875-.03-3.045 2.49-4.5 2.61-4.575-1.425-2.07-3.615-2.31-4.38-2.37-1.875-.15-3.45 1.02-4.59 1.02z"></path>
+            <path d="M15.362 3.071c.84-1.02 1.41-2.46 1.26-3.071-1.215.045-2.685.81-3.555 1.83-.78.9-1.455 2.355-1.275 3.735 1.35.105 2.73-.69 3.57-1.695z"></path>
+          </clipPath>
+        </defs>
+        <g clip-path="url(#classic-apple-clip)">
+          <rect x="0" y="0" width="24" height="4" fill="#62b548"></rect>
+          <rect x="0" y="4" width="24" height="4" fill="#d9d54a"></rect>
+          <rect x="0" y="8" width="24" height="4" fill="#f0ae3b"></rect>
+          <rect x="0" y="12" width="24" height="4" fill="#df5c43"></rect>
+          <rect x="0" y="16" width="24" height="4" fill="#8d53a6"></rect>
+          <rect x="0" y="20" width="24" height="4" fill="#2b73b8"></rect>
+        </g>
+        <path
+          d="M12.152 6.896c-.948 0-2.415-.99-3.96-.99-2.043 0-3.93 1.188-4.973 3.03-2.13 3.675-.543 9.117 1.512 12.054 1.005 1.43 2.205 3.03 3.78 2.97 1.515-.06 2.085-.885 3.915-.885 1.815 0 2.325.885 3.945.855 1.635-.03 2.67-1.455 3.675-2.895 1.155-1.695 1.635-3.345 1.665-3.435-.045-.015-3.195-1.23-3.225-4.875-.03-3.045 2.49-4.5 2.61-4.575-1.425-2.07-3.615-2.31-4.38-2.37-1.875-.15-3.45 1.02-4.59 1.02z"
+          fill="none"
+          stroke="rgba(70, 57, 34, 0.28)"
+          stroke-width="0.5"
+        ></path>
+        <path
+          d="M15.362 3.071c.84-1.02 1.41-2.46 1.26-3.071-1.215.045-2.685.81-3.555 1.83-.78.9-1.455 2.355-1.275 3.735 1.35.105 2.73-.69 3.57-1.695z"
+          fill="none"
+          stroke="rgba(70, 57, 34, 0.28)"
+          stroke-width="0.5"
+        ></path>
+      </symbol>
+    </svg>
+    <main class="stage" id="content">
+      <section class="computer-scene" aria-label="Personal page displayed inside a 1984 Macintosh-inspired computer">
+        <div class="computer-scene__shadow" aria-hidden="true"></div>
+        <div class="machine">
+          <div class="machine__handle" aria-hidden="true"></div>
+          <div class="machine__shell">
+            <div class="screen-well">
+              <div class="screen-frame">
+                <div class="screen">
+                  <div class="menu-bar" aria-hidden="true">
+                      <div class="menu-bar__left">
+                        <span class="menu-bar__mark" aria-hidden="true">
+                          <svg viewBox="0 0 16 16">
+                            <use href="#pixel-icon-finder"></use>
+                          </svg>
+                        </span>
+                        <span>Finder</span>
+                        <span>File</span>
+                        <span>Edit</span>
+                        <span>View</span>
+                      </div>
+                      <div class="menu-bar__right">
+                        <span>Desktop</span>
+                        <span>Profile</span>
+                      </div>
+                    </div>
+
+                    <div class="desktop">
+                      <article class="window window--about is-open" aria-labelledby="about-toggle">
+                      <button
+                        class="window__toggle"
+                        id="about-toggle"
+                        type="button"
+                        aria-expanded="true"
+                        aria-controls="about-panel"
+                      >
+                        <span class="window__control" aria-hidden="true"></span>
+                        <span class="window__title">
+                          <span class="pixel-icon" aria-hidden="true">
+                            <svg viewBox="0 0 16 16">
+                              <use href="#pixel-icon-mac"></use>
+                            </svg>
+                          </span>
+                          <span>About Me</span>
+                        </span>
+                      </button>
+                      <div class="window__panel" id="about-panel" role="region" aria-labelledby="about-toggle">
+                        <div class="window__panel-inner">
+                          <div class="window__body">
+                            <div class="about-layout">
+                              <div class="about-main">
+                                <div class="identity">
+                                  <h1 lang="zh-Hans">孙翌</h1>
+                                </div>
+                                <div class="prose">
+                                  <p>I come from Pudong, Shanghai.</p>
+                                  <p>
+                                    I am a third-year undergraduate student in the School of
+                                    Computer Science and Artificial Intelligence at Shanghai
+                                    University of Finance and Economics.
+                                  </p>
+                                  <p>
+                                    I am currently in a bit of a dilemma about the future,
+                                    and I am still exploring what kind of path I want to take
+                                    next.
+                                  </p>
+                                </div>
+                              </div>
+                              <aside class="portrait-card" aria-label="Portrait">
+                                <img
+                                  src="./TouXiang.png"
+                                  alt="Portrait illustration for 孙翌"
+                                  width="284"
+                                  height="320"
+                                  decoding="async"
+                                  fetchpriority="high"
+                                />
+                              </aside>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </article>
+
+                      <section class="window" aria-labelledby="research-toggle">
+                      <button
+                        class="window__toggle"
+                        id="research-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="research-panel"
+                      >
+                        <span class="window__control" aria-hidden="true"></span>
+                        <span class="window__title">
+                          <span class="pixel-icon pixel-icon--doc" aria-hidden="true">
+                            <svg viewBox="0 0 16 16">
+                              <use href="#pixel-icon-doc"></use>
+                            </svg>
+                          </span>
+                          <span>Research</span>
+                        </span>
+                      </button>
+                      <div class="window__panel" id="research-panel" role="region" aria-labelledby="research-toggle">
+                        <div class="window__panel-inner">
+                          <div class="window__body">
+                            <p class="info-copy">
+                              I am currently researching social simulation with large
+                              language models (LLMs).
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      </section>
+
+                      <section class="window" aria-labelledby="interests-toggle">
+                      <button
+                        class="window__toggle"
+                        id="interests-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="interests-panel"
+                      >
+                        <span class="window__control" aria-hidden="true"></span>
+                        <span class="window__title">
+                          <span class="pixel-icon pixel-icon--toolbox" aria-hidden="true">
+                            <svg viewBox="0 0 16 16">
+                              <use href="#pixel-icon-toolbox"></use>
+                            </svg>
+                          </span>
+                          <span>Interests</span>
+                        </span>
+                      </button>
+                      <div class="window__panel" id="interests-panel" role="region" aria-labelledby="interests-toggle">
+                        <div class="window__panel-inner">
+                          <div class="window__body">
+                            <p class="info-copy">
+                              My hobbies include film photography and collecting medals
+                              from various countries.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      </section>
+
+                      <section class="window window--contact" aria-labelledby="contact-toggle">
+                      <button
+                        class="window__toggle"
+                        id="contact-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="contact-panel"
+                      >
+                        <span class="window__control" aria-hidden="true"></span>
+                        <span class="window__title">
+                          <span class="pixel-icon pixel-icon--contact" aria-hidden="true">
+                            <svg viewBox="0 0 16 16">
+                              <use href="#pixel-icon-contact"></use>
+                            </svg>
+                          </span>
+                          <span>Contact</span>
+                        </span>
+                      </button>
+                      <div class="window__panel" id="contact-panel" role="region" aria-labelledby="contact-toggle">
+                        <div class="window__panel-inner">
+                          <div class="window__body">
+                            <div class="contact-stack">
+                              <div class="contact-direct">
+                                <a
+                                  class="contact-direct__item"
+                                  href="https://github.com/pifazuoren"
+                                  target="_blank"
+                                  rel="noopener"
+                                  aria-label="Open GitHub profile for pifazuoren"
+                                >
+                                  <span class="contact-direct__label">
+                                    <span class="pixel-icon pixel-icon--github" aria-hidden="true">
+                                      <svg viewBox="0 0 16 16">
+                                        <use href="#pixel-icon-github"></use>
+                                      </svg>
+                                    </span>
+                                    <span>GitHub</span>
+                                  </span>
+                                  <span class="contact-direct__value">github.com/pifazuoren</span>
+                                  <span class="contact-direct__action" aria-hidden="true">Open</span>
+                                </a>
+
+                                <a
+                                  class="contact-direct__item"
+                                  href="mailto:lalegebo@gmail.com"
+                                  aria-label="Send email to lalegebo@gmail.com"
+                                >
+                                  <span class="contact-direct__label">
+                                    <span class="pixel-icon pixel-icon--mail" aria-hidden="true">
+                                      <svg viewBox="0 0 16 16">
+                                        <use href="#pixel-icon-mail"></use>
+                                      </svg>
+                                    </span>
+                                    <span>Email</span>
+                                  </span>
+                                  <span class="contact-direct__value">lalegebo@gmail.com</span>
+                                  <span class="contact-direct__action" aria-hidden="true">Mail</span>
+                                </a>
+                              </div>
+
+                              <div class="contact-divider" aria-hidden="true">QR Contact</div>
+
+                              <div class="contact-grid">
+                                <section class="contact-fold" aria-labelledby="wechat-contact-toggle">
+                                  <button
+                                    class="contact-fold__toggle"
+                                    id="wechat-contact-toggle"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="wechat-contact-panel"
+                                  >
+                                    <span class="contact-fold__control" aria-hidden="true"></span>
+                                    <span class="contact-fold__label">
+                                      <span class="pixel-icon pixel-icon--wechat" aria-hidden="true">
+                                        <svg viewBox="0 0 16 16">
+                                          <use href="#pixel-icon-wechat"></use>
+                                        </svg>
+                                      </span>
+                                      <span>WeChat</span>
+                                    </span>
+                                    <span class="contact-fold__kind" aria-hidden="true">QR Contact</span>
+                                  </button>
+                                  <div
+                                    class="contact-fold__panel"
+                                    id="wechat-contact-panel"
+                                    role="region"
+                                    aria-labelledby="wechat-contact-toggle"
+                                  >
+                                    <div class="contact-fold__panel-inner">
+                                      <div class="contact-fold__body">
+                                        <a
+                                          class="qr-link"
+                                          href="./wechat.jpg"
+                                          target="_blank"
+                                          rel="noopener"
+                                          aria-label="Open a larger WeChat QR code image"
+                                        >
+                                          <img
+                                            src="./wechat.jpg"
+                                            alt="WeChat QR code image for the display name 披发左衽"
+                                            width="1083"
+                                            height="1461"
+                                            decoding="sync"
+                                            fetchpriority="high"
+                                          />
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+
+                                <section class="contact-fold" aria-labelledby="rednote-contact-toggle">
+                                  <button
+                                    class="contact-fold__toggle"
+                                    id="rednote-contact-toggle"
+                                    type="button"
+                                    aria-expanded="false"
+                                    aria-controls="rednote-contact-panel"
+                                  >
+                                    <span class="contact-fold__control" aria-hidden="true"></span>
+                                    <span class="contact-fold__label">
+                                      <span class="pixel-icon pixel-icon--note" aria-hidden="true">
+                                        <svg viewBox="0 0 16 16">
+                                          <use href="#pixel-icon-note"></use>
+                                        </svg>
+                                      </span>
+                                      <span>Rednote</span>
+                                    </span>
+                                    <span class="contact-fold__kind" aria-hidden="true">QR Contact</span>
+                                  </button>
+                                  <div
+                                    class="contact-fold__panel"
+                                    id="rednote-contact-panel"
+                                    role="region"
+                                    aria-labelledby="rednote-contact-toggle"
+                                  >
+                                    <div class="contact-fold__panel-inner">
+                                      <div class="contact-fold__body">
+                                        <a
+                                          class="qr-link"
+                                          href="./rednote.jpg"
+                                          target="_blank"
+                                          rel="noopener"
+                                          aria-label="Open a larger Rednote QR code image"
+                                        >
+                                          <img
+                                            src="./rednote.jpg"
+                                            alt="Rednote profile and QR code image for the display name 披发左衽"
+                                            width="1011"
+                                            height="1629"
+                                            decoding="sync"
+                                            fetchpriority="high"
+                                          />
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </section>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      </section>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <div class="machine__utility" aria-hidden="true">
+              <div class="machine__signature">
+                <span class="machine__apple">
+                  <svg viewBox="0 0 24 24">
+                    <use href="#classic-apple"></use>
+                  </svg>
+                </span>
+              </div>
+              <div class="machine__drive">
+                <span class="machine__drive-lip"></span>
+                <span class="machine__drive-slot"></span>
+                <span class="machine__drive-eject"></span>
+                <span class="machine__drive-dot"></span>
+              </div>
+            </div>
+            <div class="machine__lower" aria-hidden="true">
+              <span class="machine__switch"></span>
+              <span class="machine__foot machine__foot--left"></span>
+              <span class="machine__foot machine__foot--right"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      const setupCollapsible = ({
+        rootSelector,
+        toggleSelector,
+        panelSelector,
+        panelInnerSelector,
+        openClass,
+      }) => {
+        const roots = Array.from(document.querySelectorAll(rootSelector));
+
+        roots.forEach((rootEl) => {
+          const toggle = rootEl.querySelector(toggleSelector);
+          const panel = rootEl.querySelector(panelSelector);
+          const panelInner = rootEl.querySelector(panelInnerSelector);
+
+          if (!toggle || !panel || !panelInner) {
+            return;
+          }
+
+          const initialExpanded =
+            toggle.getAttribute("aria-expanded") === "true" ||
+            rootEl.classList.contains(openClass);
+
+          toggle.setAttribute("aria-expanded", String(initialExpanded));
+          rootEl.classList.toggle(openClass, initialExpanded);
+          panel.setAttribute("aria-hidden", String(!initialExpanded));
+          panelInner.inert = !initialExpanded;
+
+          toggle.addEventListener("click", () => {
+            const nextExpanded = toggle.getAttribute("aria-expanded") !== "true";
+
+            toggle.setAttribute("aria-expanded", String(nextExpanded));
+            rootEl.classList.toggle(openClass, nextExpanded);
+            panel.setAttribute("aria-hidden", String(!nextExpanded));
+            panelInner.inert = !nextExpanded;
+          });
+        });
+      };
+
+      setupCollapsible({
+        rootSelector: ".window",
+        toggleSelector: ".window__toggle",
+        panelSelector: ".window__panel",
+        panelInnerSelector: ".window__panel-inner",
+        openClass: "is-open",
+      });
+
+      setupCollapsible({
+        rootSelector: ".contact-fold",
+        toggleSelector: ".contact-fold__toggle",
+        panelSelector: ".contact-fold__panel",
+        panelInnerSelector: ".contact-fold__panel-inner",
+        openClass: "is-open",
+      });
+
+      const autoOpenMap = {
+        about: "about-toggle",
+        research: "research-toggle",
+        interests: "interests-toggle",
+        contact: "contact-toggle",
+        wechat: "wechat-contact-toggle",
+        rednote: "rednote-contact-toggle",
+      };
+
+      const requestedOpen = new URLSearchParams(window.location.search).get("open");
+
+      if (requestedOpen) {
+        requestedOpen
+          .split(",")
+          .map((item) => item.trim().toLowerCase())
+          .forEach((key) => {
+            const toggleId = autoOpenMap[key];
+            const toggle = toggleId ? document.getElementById(toggleId) : null;
+
+            if (toggle && toggle.getAttribute("aria-expanded") !== "true") {
+              toggle.click();
+            }
+          });
+      }
+    </script>
+  </body>
+</html>
